@@ -1,0 +1,182 @@
+/* PAGE */
+body {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+
+/* COLORS */
+
+#banner {
+  background-color: rgba(90,138,175,0.85); /* Light Blue */
+  color: white;
+}
+
+#banner h1 a {
+  color: white;
+}
+
+#details {
+  background-color: #f7f5f3; /* eggshell */
+  color: #222; 
+}
+
+#apply {
+  background-color: #d57850; /* eggshell */
+  color: white; 
+}
+
+#team {  
+  background-color: #f7f5f3; /* eggshell */
+  color: #222; 
+}
+
+#mentors {
+  background-color: #cecece;
+  color: #222;
+}
+
+#faq {
+  background-color: #f7f5f3; /* eggshell */
+  color: #222; 
+}
+
+/* Margins */
+
+section {
+  padding: 40px 35px;
+}
+
+
+#faq .qa {
+  margin: 40px 0;
+  display: block;
+}
+
+/* Headers */
+
+h1 a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 100;
+  line-height: 1.4em;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+
+h2 {
+  font-size: 2.4em;
+  font-weight: 100;
+  line-height: 1.2em;
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+
+
+h3 {
+  font-size: 1.4em;
+  font-weight: 300;
+  line-height: 1em;
+  text-align: center;
+}
+
+h3.hug {
+  font-size: 1.4em;
+  font-weight: 300;
+  line-height: 1em;
+  margin: -1.4em 0 1.6em 0;
+  text-align: center;
+}
+
+#faq .q {
+  color: #5a8aaf;
+  font-size: 1.4em;
+  font-weight: 300;
+  line-height: 1.4em;
+  margin-bottom: 0.6em;
+  display: block;
+}
+
+#faq .q span, #faq .a span {
+  font-weight: bold;
+}
+
+#faq .a {
+  font-size: 1.12em;
+  font-weight: 300;
+  margin: 0 0 0.77em;
+  line-height: 1.54em;
+  color: #7d7d7d;
+  display: block;
+}
+/* Program */
+
+#apply p {
+  text-align: center;
+}
+
+.signup-btn {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 1.1em;
+  background-color: rgba(90,138,175,0.85);
+  color: white;
+}
+
+
+
+
+/* Features */
+.features {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.features h3 {
+  text-align: left;
+  font-weight: 400;
+}
+
+.features p {
+  font-style: italic;
+}
+
+/* People */
+
+
+.person {
+
+}
+
+.person img.profile {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+.person div.profile {
+  color: #444;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.person div.profile .name {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #666;
+}
+
+
