@@ -3,7 +3,15 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="css/cybersecurity-factory.css" />
-  </head>
+    <script src="js/cybersecurity-factory.js"></script>
+    <script src="http://static.cloudstitch.io/cloudstitch.js" app="ted/the-cybersecurity-factory"></script>
+   <!-- <script src="http://localhost:3000/release/cloudstitch.dev.js" app="ted/the-cybersecurity-factory"></script> -->
+    <script>
+    CTS(function() {
+      CTS.Util.$('button').attr('disabled', null);
+    })
+    </script>
+    <link type="cloudstitch/gsheet" href="http://cloudstitch.io/ted/the-cybersecurity-factory/datasource/sheet" />  </head>
   <body>
   <div class="container-fluid">
     <section id="banner" class="row">
@@ -14,47 +22,69 @@
       </div>
     </section>
 
-    <section id="details" class="row">
+    <section id="details" class="row"  style="padding-bottom:200px;">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
       <p>Find out more about The Cybersecurity Factory <a href="index.html">here</a>.</p>
       <p>Sign up to stay in the loop about applications and other updates!</p>
 
-      <form>
+      <div id="success" class="alert alert-info" style="display:none">
+      <h2>Thank you</h2>
+      <p align="center">We will be in touch!</p>
+      </div>
+
+      <div id="failure" class="alert alert-danger" style="display:none">
+      <h2>Uh-oh...</h2>
+      <p align="center">Our apologies! There was a problem submitting this form.</p>
+      <p align="center">Please email your responses to cybersecurityfactory@mit.edu instead!</p>
+      </div>
+
+
+      <form data-cts='this {"after": "preSignupSuccess", "fail": "preSignupError"} :creates sheet|Sheet1!rows'>
         <div class="form-group">
           <label class="control-label">Name</label>
           <div>
-            <input class="form-control" type="text" name="name" placeholder="Ben Bitdiddle" data-validate="required" />
+            <input class="form-control" type="text" connect="col(name)" name="name" placeholder="Ben Bitdiddle" data-validate="required" />
           </div>
         </div>
 
         <div class="form-group">
           <label class="control-label">Email</label>
           <div >
-            <input class="form-control" type="text" name="email" placeholder="you@domain.com" data-validate="required" />
+            <input class="form-control" type="text" connect="col(email)" name="email" placeholder="you@domain.com" data-validate="required" />
           </div>
         </div>
 
         <div class="form-group">
           <label class="control-label">Current school affiliation and degree program (if any)</label>
           <div>
-            <textarea class="form-control" name="affiliation"></textarea>
+            <textarea class="form-control" connect="col(affiliation)" name="affiliation"></textarea>
           </div>
         </div>
 
         <div class="form-group">
           <label class="control-label">Brief summary of startup idea (140 characters or less)</label>
           <div>
-            <textarea class="form-control" name="affiliation"></textarea>
+            <textarea class="form-control" connect="col(idea)" name="idea"></textarea>
           </div>
         </div>
          
-        <button class="btn signup-btn">Send me Updates</button>
+        <button disabled class="btn signup-btn">Send me Updates</button>
 
       </form>
       </div>
-      </section>
+  <div class="cs-footer">
+      <a href="http://cloudstitch.io/">
+        <img src="img/powered-by.png" width="250px" alt="Powered by Cloudstitch" />
+      </a>
+    </div>
+
   </div>
+
+      </section>
+
+
+
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   </body>
