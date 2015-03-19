@@ -8,6 +8,9 @@ body {
 }
 
 /* COLORS */
+.person {
+  margin-bottom: 15px;
+}
 
 #banner {
   background-color: rgba(90,138,175,0.85); /* Light Blue */
@@ -103,7 +106,7 @@ h3.hug {
   display: block;
 }
 
-#faq .q span, #faq .a span {
+#faq .q span.bold, #faq .a span.bold {
   font-weight: bold;
 }
 
