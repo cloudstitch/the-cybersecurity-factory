@@ -1,0 +1,193 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/cybersecurity-factory.css" />
+    <script src="js/cybersecurity-factory.js"></script>
+    <script src="http://static.cloudstitch.io/cloudstitch.js" app="ted/the-cybersecurity-factory"></script>
+   <!-- <script src="http://localhost:3000/release/cloudstitch.dev.js" app="ted/the-cybersecurity-factory"></script> -->
+    <script>
+    function refreshPeople(node) {
+      var ppl = '';
+      CTS.Util.$('.person').each(function(idx, node) {
+        CTS.Util.$(node).find('input').each(function(i2, n2) {
+          ppl += CTS.Util.$(n2).attr('name') + ': ' + CTS.Util.$(n2).val() + '\n'
+        });
+        ppl += '\n';
+      });      
+      CTS.Util.$('#allpeople').html(ppl);
+    }
+
+    function wireEm(node) {
+      node.find('input').on('keyup', function() {
+        refreshPeople();
+      });
+    }
+    CTS(function() {
+      CTS.Util.$('button').attr('disabled', null);
+      wireEm(CTS.Util.$('.person'));
+      CTS.Util.$('.add-person').on('click', function() {
+        var people = CTS.Util.$('.person');
+        var nextNum = people.length + 1;
+        var lastOne = CTS.Util.$('.person').last();
+        var newOne = lastOne.clone();
+        newOne.find('input').val('');
+        newOne.find('h4 > span').html(nextNum);
+        lastOne.after(newOne);
+        wireEm(newOne);
+        if (nextNum == 4) {
+          CTS.Util.$('.add-person').hide();
+        }
+        return false;
+      });
+    });
+
+    </script>
+    <link type="cloudstitch/gsheet" href="http://cloudstitch.io/ted/the-cybersecurity-factory/datasource/sheet" />
+    <style>h3 {text-align: left;} </style>
+
+      </head>
+  <body>
+  <div class="container-fluid">
+
+      <nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Cybersecurity Factory</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#banner">Details</a></li>
+              <li><a href="#apply">Apply</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#mentors">Mentors</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+          </nav>
+
+
+    <section id="banner" class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <h1><a href="index.html">The Cybersecurity Factory</a></h1>
+      <h2>Application</h2>
+      </div>
+    </section>
+
+    <section id="details" class="row"  style="padding-bottom:200px;">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+      <p>Find out more about The Cybersecurity Factory <a href="index.html">here</a>.</p>
+
+      <div id="success" class="alert alert-info" style="display:none">
+      <h2>Thank you</h2>
+      <p align="center">We will be in touch!</p>
+      </div>
+
+      <div id="failure" class="alert alert-danger" style="display:none">
+      <h2>Uh-oh...</h2>
+      <p align="center">Our apologies! There was a problem submitting this form.</p>
+      <p align="center">Please email your responses to cybersecurityfactory@mit.edu instead!</p>
+      </div>
+
+      <form data-cts='this {"after": "preSignupSuccess", "fail": "preSignupError"} :creates sheet|Sheet1!rows'>
+
+        <h3>Teammates</h3>
+        <div class="form-group">
+          <label class="control-label">For each of your teammates (up to 4), please list their name, email, mobile number, personal url (Github, personal website, blog, Dropbox, etc.), university/company, major, and resume URL.
+</label>
+          <div>
+          <style>
+            h4 {
+              font-style: italic;
+              font-size: 1.2em;
+              font-weight: normal;
+            }
+            .person b {
+              clear: both;
+              display: block;
+              font-weight: normal;
+            }
+            .person input {
+              width: 80%;
+            }
+            .person {
+              border-left: 4px solid #333;
+              padding-left: 10px;
+              margin: 5px 0 10px 0;
+            }
+
+          </style>
+            <textarea id="allpeople" style="display: none;" class="form-control" connect="col(people)" name="people"></textarea>
+            <div class="people">
+              <div class="person">
+                <h4>Person <span>1</span></h4>
+                <b>Name</b>
+                <input name="name" />
+                <b>Email</b>
+                <input  name="email" />
+                <b>Mobile Number</b>
+                <input name="mobile" />
+                <b>Personal URL</b>
+                <input  name="url" />
+                <b>University/Company</b>
+                <input name="org" />
+                <b>Major</b>
+                <input  name="major" />
+                <b>Resume URL</b>
+                <input  name="resume" />
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary add-person">Add Another Person</a>
+
+          </div>
+        </div>
+
+        <h3>Reference Letters</h3>
+  
+        <div class="form-group">
+          <label class="control-label">Email</label>
+          <div >
+            <input class="form-control" type="text" connect="col(email)" name="email" placeholder="you@domain.com" data-validate="required" />
+          </div>
+        </div>
+
+        <h3>Company Info</h3>
+
+        <h3>Additional Information</h3>
+
+        <div class="form-group">
+          <label class="control-label">Your team is allowed to include one additional link that you find relevant and useful. This could be a pitch deck, a quick promo video, etc. This is not required, but we will take a look if your team provides a link.
+        </label>
+          <div>
+            <input class="form-control" type="text" connect="col(extralink)" name="extralink" placeholder="you@domain.com" data-validate="required" />
+          </div>
+        </div>
+         
+        <button disabled class="btn signup-btn">Apply</button>
+
+      </form>
+      </div>
+  <div class="cs-footer">
+      <a href="http://cloudstitch.io/">
+        <img src="img/powered-by.png" width="250px" alt="Powered by Cloudstitch" />
+      </a>
+    </div>
+
+  </div>
+
+      </section>
+
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
