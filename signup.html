@@ -24,21 +24,23 @@
       });
     }
     CTS(function() {
-      CTS.Util.$('button').attr('disabled', null);
-      wireEm(CTS.Util.$('.person'));
-      CTS.Util.$('.add-person').on('click', function() {
-        var people = CTS.Util.$('.person');
-        var nextNum = people.length + 1;
-        var lastOne = CTS.Util.$('.person').last();
-        var newOne = lastOne.clone();
-        newOne.find('input').val('');
-        newOne.find('h4 > span').html(nextNum);
-        lastOne.after(newOne);
-        wireEm(newOne);
-        if (nextNum == 4) {
-          CTS.Util.$('.add-person').hide();
-        }
-        return false;
+      CTS.Util.$(function() {
+        CTS.Util.$('button').attr('disabled', null);
+        wireEm(CTS.Util.$('.person'));
+        CTS.Util.$('.add-person').on('click', function() {
+          var people = CTS.Util.$('.person');
+          var nextNum = people.length + 1;
+          var lastOne = CTS.Util.$('.person').last();
+          var newOne = lastOne.clone();
+          newOne.find('input').val('');
+          newOne.find('h4 > span').html(nextNum);
+          lastOne.after(newOne);
+          wireEm(newOne);
+          if (nextNum == 4) {
+            CTS.Util.$('.add-person').hide();
+          }
+          return false;
+        });
       });
     });
 
@@ -59,24 +61,28 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Cybersecurity Factory</a>
+            <a class="navbar-brand" href="index.html">Cybersecurity Factory</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#banner">Details</a></li>
-              <li><a href="#apply">Apply</a></li>
-              <li><a href="#team">Team</a></li>
-              <li><a href="#mentors">Mentors</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="index.html#banner">Details</a></li>
+              <li><a href="#">Apply</a></li>
+              <li><a href="index.html#team">Team</a></li>
+              <li><a href="index.html#mentors">Mentors</a></li>
+              <li><a href="index.html#faq" >FAQ</a></li>
             </ul>
+            <ul class="nav navbar-nav pull-right">
+              <li><a href="http://www.hcp.com">Highland Capital</a></li>
+            </ul>
+
             </div><!-- /.navbar-collapse -->
           </nav>
-
-
     <section id="banner" class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <img style="margin-left: auto; margin-top: 35px; margin-right: auto; display: block;" src="img/factory-logo.jpg" />
       <h1><a href="index.html">The Cybersecurity Factory</a></h1>
+      <h3 style="margin-bottom: 25px; text-align: center; font-style: italic">presented by <a style="color: white" href="http://www.hcp.com">Highland Capital Partners</a></h3>
       <h2>Application</h2>
       </div>
     </section>
@@ -97,7 +103,7 @@
       <p align="center">Please email your responses to cybersecurityfactory@mit.edu instead!</p>
       </div>
 
-      <form data-cts='this {"after": "preSignupSuccess", "fail": "preSignupError"} :creates sheet|Sheet1!rows'>
+      <form data-cts='this {"after": "preSignupSuccess", "fail": "preSignupError"} :creates sheet|Signups!rows'>
 
         <h3>Teammates</h3>
         <div class="form-group">
@@ -105,6 +111,9 @@
 </label>
           <div>
           <style>
+            label.control-label {
+              font-weight: normal;
+            }
             h4 {
               font-style: italic;
               font-size: 1.2em;
@@ -123,7 +132,6 @@
               padding-left: 10px;
               margin: 5px 0 10px 0;
             }
-
           </style>
             <textarea id="allpeople" style="display: none;" class="form-control" connect="col(people)" name="people"></textarea>
             <div class="people">
@@ -153,13 +161,43 @@
         <h3>Reference Letters</h3>
   
         <div class="form-group">
-          <label class="control-label">Email</label>
+          <label class="control-label">Please list the name, title, organization, and email of 2 references. We will not need a letter from them now, but we will reach out to them if necessary.
+</label>
           <div >
-            <input class="form-control" type="text" connect="col(email)" name="email" placeholder="you@domain.com" data-validate="required" />
+            <textarea id="referehces" class="form-control" connect="col(references)" name="references"></textarea>
           </div>
         </div>
 
         <h3>Company Info</h3>
+
+        <div class="form-group">
+          <label class="control-label">Please give us the name of your Company.</label>
+          <div >
+            <input class="form-control" type="text" connect="col(companyname)" name="companyName" placeholder="Acme Inc" data-validate="required" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Describe your company in 140 words or less..</label>
+          <div >
+            <textarea id="companyDescription" class="form-control" connect="col(companydescription)" name="companyDescription"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">
+            Create a video less than 2 minutes answering the following questions:
+            <ul>
+              <li>What security problem are you solving and why is it important?</li>
+              <li>How did your team come together to solve it?</li>
+              <li>What is your goal for this product by the end of the summer?</li>
+            </ul>
+            <p>Please do not password protect your video. Also, please include all your team members in the video. Paste the private URL below.</p>
+          </label>
+          <div >
+            <input class="form-control" type="text" connect="col(videourl)" name="videoUrl" placeholder="" data-validate="required" />
+          </div>
+        </div>
 
         <h3>Additional Information</h3>
 
@@ -167,7 +205,7 @@
           <label class="control-label">Your team is allowed to include one additional link that you find relevant and useful. This could be a pitch deck, a quick promo video, etc. This is not required, but we will take a look if your team provides a link.
         </label>
           <div>
-            <input class="form-control" type="text" connect="col(extralink)" name="extralink" placeholder="you@domain.com" data-validate="required" />
+            <input class="form-control" type="text" connect="col(extralink)" name="extralink" data-validate="required" />
           </div>
         </div>
          

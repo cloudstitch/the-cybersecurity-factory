@@ -18,23 +18,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Cybersecurity Factory</a>
+            <a class="navbar-brand" href="index.html">Cybersecurity Factory</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#banner">Details</a></li>
+              <li><a href="index.html#banner">Details</a></li>
               <li><a href="#apply">Apply</a></li>
               <li><a href="#team">Team</a></li>
               <li><a href="#mentors">Mentors</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
+            <ul class="nav navbar-nav pull-right">
+              <li><a href="http://www.hcp.com">Highland Capital</a></li>
+            </ul>
+
             </div><!-- /.navbar-collapse -->
           </nav>
 
           <section id="banner" class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+              <img style="margin-left: auto; margin-top: 35px; margin-right: auto; display: block;" src="img/factory-logo.jpg" />
               <h1>The Cybersecurity Factory</h1>
+              <h3 style="margin-bottom: 25px; font-style: italic">presented by <a style="color: white" href="http://www.hcp.com">Highland Capital Partners</a></h3>
               <h2>A Summer Program for Security Companies</h2>
             </div>
           </section>
@@ -87,7 +93,7 @@
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                   <h2>Application deadline: mid-April</h2>
                   <h3 class="hug">Summer program: mid-June to mid-August</h3>
-                  <p>Our application isn't up yet, but you can <a href="pre-signup.html" class="btn signup-btn">sign up to receive updates</a>.</p>
+                  <p align="center" style="margin-bottom:30px"><a href="signup.html" class="btn signup-btn">Sign Up Now</a></p>
                   <p>If there any questions not answered in the <a href="#faq">FAQ</a>, feel free to contact us at cybersecurityfactory@mit.edu.</p>
                 </div>
               </div>
@@ -104,7 +110,7 @@
                 <div class="person col-xs-12 col-sm-6">
                   <img class="profile" connect-src="Staff!col(Image)" src="" />
                   <div class="profile">
-                    <span class="name"><a connect-href="Staff!col(Url)" connect="Staff!col(Name)" href="#">First Last</a></span> &nbsp;(<a connect-href="Staff!col(Twitter)" href="#"><i class="fa fa-twitter"></i></a> <a connect-href="Staff!col(LinkedIn)" href="#"><i class="fa fa-linkedin"></i></a>) <span connect="Staff!col(Description)">is a nica gal</span>
+                    <span class="name"><a connect-href="Staff!col(Url)" connect="Staff!col(Name)" href="#">First Last</a></span> &nbsp;(<a show-if="Staff!col(Url)" connect-href="Staff!col(Url)" href="#"><i class="fa fa-globe"></i></a> <a show-if="Staff!col(Twitter)" connect-href="Staff!col(Twitter)" href="#"><i class="fa fa-twitter"></i></a> <a show-if="Staff!col(LinkedIn)" connect-href="Staff!col(LinkedIn)" href="#"><i class="fa fa-linkedin"></i></a>) <span connect="Staff!col(Description)">is a nica gal</span>
                   </div>
                 </div>
               </div>
@@ -165,24 +171,6 @@
           </div>
           <script src="js/jquery.min.js"></script>
           <script src="js/bootstrap.min.js"></script>
-          <script>
-          (function ($) {
-          $(document).ready(function(){
-          // hide .navbar first
-          $(".navbar").hide();
-          // fade in .navbar
-          $(function () {
-          $(window).scroll(function () {
-          // set distance user needs to scroll before we fadeIn navbar
-          if ($(this).scrollTop() > 100) {
-          $('.navbar').fadeIn();
-          } else {
-          $('.navbar').fadeOut();
-          }
-          });
-          });
-          });
-          }(jQuery));
-          </script>
+
         </body>
       </html>
