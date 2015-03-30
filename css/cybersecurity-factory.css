@@ -36,8 +36,18 @@ body {
   color: #222; 
 }
 
-#mentors {
+#acmentors {
   background-color: #cecece;
+  color: #222;
+}
+
+#callfor {
+  background-color: #cecece;
+  color: #222;
+}
+
+#inmentors {
+  background-color: #white;
   color: #222;
 }
 

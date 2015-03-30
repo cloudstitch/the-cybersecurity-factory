@@ -23,10 +23,9 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="index.html#banner">Details</a></li>
               <li><a href="#apply">Apply</a></li>
               <li><a href="#team">Team</a></li>
-              <li><a href="#mentors">Mentors</a></li>
+              <li><a href="#acmentors">Mentors</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
             <ul class="nav navbar-nav pull-right">
@@ -108,13 +107,13 @@
 
               <div class="row">
                 <div class="col-xs-12 col-sm-4 col-sm-offset-2" style="text-align: center">
-                  <h3 style="margin-top:5px">Early Decision</h3>
-                  <h3>April 23rd, 5pm EST</h3>
+                  <h3 style="margin-top:15px">Early Decision</h3>
+                  <h3 style="margin-top:3px">April 23rd, 5pm EST</h3>
                   <p>and hear back by May 7th</p>
                 </div>
                 <div class="col-xs-12 col-sm-4" style="text-align: center">
-                  <h3 style="margin-top:5px">Regular Decision</h3>
-                  <h3>May 7th, 5pm EST</h3>
+                  <h3 style="margin-top:15px">Regular Decision</h3>
+                  <h3 style="margin-top:3px">May 7th, 5pm EST</h3>
                   <p>and hear back by May 21st</p>
                 </div>
               </div>
@@ -145,7 +144,7 @@
             </section>
 
 
-  <section id="mentors" class="people">
+  <section id="acmentors" class="people">
     <div class="row" style="margin-bottom: 15px">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <h2>Academic Mentors</h2>
@@ -153,11 +152,52 @@
       </div>
     </div>
 
-    <div class="row" connect="Mentors!rows">
+    <div class="row" connect="AcademicMentors!rows">
       <div class="person col-xs-12 col-sm-6">
-        <img connect-src="Mentors!col(Image)" class="profile" src="" />
+        <img connect-src="AcademicMentors!col(Image)" class="profile" src="" />
         <div class="profile">
-        <span class="name"><a connect-href="Mentors!col(Url)" connect="Mentors!col(Name)" href="#">First Last</a></span> <span connect="Mentors!col(Description)">is a nice guy</span>
+        <span class="name"><a connect-href="AcademicMentors!col(Url)" connect="AcademicMentors!col(Name)" href="#">First Last</a></span> <span connect="AcademicMentors!col(Description)">is a nice guy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="inmentors" class="people grey-people">
+    <div class="row" style="margin-bottom: 15px">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h2>Industry Mentors</h2>
+        <p align="center">We are in the process of recruiting additional mentors. More information soon!</p>
+      </div>
+    </div>
+
+    <div class="row" connect="IndustryMentors!rows">
+      <div class="person col-xs-12 col-sm-6">
+        <img connect-src="IndustryMentors!col(Image)" class="profile" src="" />
+        <div class="profile">
+        <span class="name"><a connect-href="IndustryMentors!col(Url)" connect="IndustryMentors!col(Name)" href="#">First Last</a></span> <span connect="IndustryMentors!col(Description)">is a nice guy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="callfor">
+    <div class="row" style="margin-bottom: 15px">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h2>Call for Startups</h2>
+        <div connect="ReqForStartups!rows">
+          <div>        
+          <h4 style="text-align: left" connect="ReqForStartups!col(Topic)">Idea</h4>
+          <p style="text-align:left" connect="ReqForStartups!col(Description)">Description</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" connect="IndustryMentors!rows">
+      <div class="person col-xs-12 col-sm-6">
+        <img connect-src="IndustryMentors!col(Image)" class="profile" src="" />
+        <div class="profile">
+        <span class="name"><a connect-href="IndustryMentors!col(Url)" connect="IndustryMentors!col(Name)" href="#">First Last</a></span> <span connect="IndustryMentors!col(Description)">is a nice guy</span>
         </div>
       </div>
     </div>
@@ -187,9 +227,17 @@
           </div>
         </div>
       </div>
-
-
     </section>
+
+   <section id="sponsors">
+      <h2>Sponsors</h2>
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2" style="text-align:center">
+          <img src="img/factory-logo.jpg" />
+          <h4>Highland Capital Partners</h4>
+        </div>
+      </div>
+    </section>
+
 
             <div class="cs-footer">
               <a href="http://cloudstitch.io/">
