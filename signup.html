@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="css/cybersecurity-factory.css" />
     <title>Cybersecurity Factory - Application</title>
     <script src="js/cybersecurity-factory.js"></script>
-    <script src="http://static.cloudstitch.io/cloudstitch.js" app="ted/the-cybersecurity-factory"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="js/firebase-backup.js"></script>
+    <script src="http://static.cloudstitch.io/cloudstitch.js" app="ted/cyber-security-factory-intake"></script>
    <!-- <script src="http://localhost:3000/release/cloudstitch.dev.js" app="ted/the-cybersecurity-factory"></script> -->
     <script>
     function refreshPeople(node) {
@@ -36,6 +39,7 @@
           newOne.find('input').val('');
           newOne.find('h4 > span').html(nextNum);
           lastOne.after(newOne);
+          $('input, textarea').on('blur', logFirebase);
           wireEm(newOne);
           if (nextNum == 4) {
             CTS.Util.$('.add-person').hide();
@@ -46,7 +50,7 @@
     });
 
     </script>
-    <link type="cloudstitch/gsheet" href="http://cloudstitch.io/ted/the-cybersecurity-factory/datasource/sheet" />
+    <link type="cloudstitch/gsheet" href="http://cloudstitch.io/ted/cyber-security-factory-intake/datasource/sheet" />
     <style>h3 {text-align: left;} </style>
 
       </head>
